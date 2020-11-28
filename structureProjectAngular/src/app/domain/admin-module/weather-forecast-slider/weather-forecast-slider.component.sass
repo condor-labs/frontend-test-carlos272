@@ -1,5 +1,5 @@
 
-@import '../../../../styles.sass'    
+@import '../../../../styles.sass'
 #widget-header
     display: block
     border-radius: 10px
@@ -42,6 +42,18 @@
     animation-duration: 10s
     animation-timing-function: ease-in-out
     animation-direction: alternate
+
+.widget-carousel
+    width: 400px
+    height: 500px
+    display: flex
+    overflow-x: auto
+    webkit-overflow-scrolling: touch
+
+.slide
+    width: 300px
+    flex-shrink: 0
+    height: 100%
 
 @keyframes move
     from

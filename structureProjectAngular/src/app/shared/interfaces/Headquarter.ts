@@ -11,5 +11,6 @@ export interface Headquarter {
   name: string;
   sys: Sys[];
   weather: Weather[];
-  wind: Wind[];
+  wind: Wind;
+  iconFontawesome?: string;
 }

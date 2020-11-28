@@ -4,5 +4,6 @@ export interface ExtendedForecast {
   cod: string;
   list: any;
   message: number;
+  day?:String;
 }
 

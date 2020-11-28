@@ -12,7 +12,7 @@ import { CitiesWorld } from '../../shared/interfaces/CitiesWorld';
 })
 export class AdminService {
   headquartersList: Headquarter[];
-  extendedForecastList: ExtendedForecast[];
+  extendedForecastList: ExtendedForecast;
   citiesWorldList: CitiesWorld[];
   
   headquarters = '818d0158-727b-461e-9f76-06734ed7e582';

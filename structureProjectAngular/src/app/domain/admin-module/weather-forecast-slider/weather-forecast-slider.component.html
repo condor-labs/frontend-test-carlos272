@@ -1,12 +1,11 @@
-<div id="widget-header">
-    <div class="widget-icon">
-        <i class="fas fa-3x fa-sun sunny"></i>
+<div class="widget-carousel">
+    <div class="widget-carousel-item" *ngFor="let sixWeather of sixWeathers">
+        <div id="widget-header">
+            <div class="widget-headquarter">{{sixWeather.main.temp | temperatureConverter : 'K' }}°C</div>
+            <div class="widget-day">{{sixWeather.day}}</div>
+            <div class="widget-headquarter"> Humidity {{sixWeather.main.humidity}}%</div>
+            <div class="widget-headquarter"> wind {{sixWeather.wind.speed}}m/s</div>
+        </div>
     </div>
-    <div class="widget-icon">
-        <i class="fas fa-3x fa-moon night"></i>
-    </div>
-    <div class="widget-icon cloudDiv">
-        <i class="fas fa-cloud fa-3x cloud"></i>
-    </div>
-    <div class="widget-icon" style="font-size: 32px;margin-top: 5px;">2°</div>
+
 </div>

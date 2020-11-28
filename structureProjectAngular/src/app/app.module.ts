@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { ValidationIconClass } from '../app/shared/classes/ValidationIconClass';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,6 +18,9 @@ import { SharedModule } from './shared/shared.module';
     SharedModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    { provide: ValidationIconClass, useClass: ValidationIconClass }
+  ],
 })
 export class AppModule { }
