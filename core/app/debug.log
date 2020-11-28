@@ -1,0 +1,5 @@
+[1127/182024.192:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Calmanza\AppData\Local\Temp\karma-98488717\Crashpad\attachments\daff2150-67e2-44bb-bf23-339d253e6602: El sistema no puede encontrar la ruta especificada. (0x3)
+[1127/182244.348:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Calmanza\AppData\Local\Temp\karma-3697420\Crashpad\attachments\805efe4a-5326-4b74-a015-75de630ae9f0: El sistema no puede encontrar la ruta especificada. (0x3)
+[1127/182432.030:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Calmanza\AppData\Local\Temp\karma-33097110\Crashpad\attachments\6e5f6f53-5e8c-4b8f-b181-a0efe78f59ed: El sistema no puede encontrar la ruta especificada. (0x3)
+[1127/184123.664:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1127/184519.688:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Calmanza\AppData\Local\Temp\karma-55755174\Crashpad\attachments\361b3ef6-bf2e-4313-ba5d-a658d4711abb: El sistema no puede encontrar la ruta especificada. (0x3)

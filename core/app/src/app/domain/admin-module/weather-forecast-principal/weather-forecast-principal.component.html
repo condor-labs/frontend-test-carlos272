@@ -1,0 +1,13 @@
+<div id="widget-header" [ngStyle]="{'background-image': 'url(' + headquartersPrincipal.image + ')'}">
+    <div class="widget-icon">
+        <i class="fas fa-3x fa-sun sunny"></i>
+    </div>
+    <div class="widget-icon">
+        <i class="fas fa-3x fa-moon night"></i>
+    </div>
+    <div class="widget-icon cloudMove">
+        <i class="fas fa-cloud fa-3x cloud"></i>
+    </div>
+    <div class="widget-headquarter">{{headquartersPrincipal.main.temp | temperatureConverter : 'C' }}</div>
+    <div class="widget-headquarter">{{headquartersPrincipal.name}}</div>
+</div>
