@@ -149,8 +149,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/shared.module */ "./src/app/shared/shared.module.ts");
-/* harmony import */ var _app_shared_classes_ValidationIconClass__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../app/shared/classes/ValidationIconClass */ "./src/app/shared/classes/ValidationIconClass.ts");
-
 
 
 
@@ -174,77 +172,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"]
         ],
         schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["CUSTOM_ELEMENTS_SCHEMA"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
-        providers: [
-            { provide: _app_shared_classes_ValidationIconClass__WEBPACK_IMPORTED_MODULE_8__["ValidationIconClass"], useClass: _app_shared_classes_ValidationIconClass__WEBPACK_IMPORTED_MODULE_8__["ValidationIconClass"] }
-        ],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
 ], AppModule);
 
-
-
-/***/ }),
-
-/***/ "./src/app/shared/classes/ValidationIconClass.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/shared/classes/ValidationIconClass.ts ***!
-  \*******************************************************/
-/*! exports provided: ValidationIconClass */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ValidationIconClass", function() { return ValidationIconClass; });
-/* harmony import */ var _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../enums/Weather.enum */ "./src/app/shared/enums/Weather.enum.ts");
-/* harmony import */ var _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../enums/Icons.enum */ "./src/app/shared/enums/Icons.enum.ts");
-
-
-class ValidationIconClass {
-    constructor() { }
-    validationIcon(headquartersPrincipal) {
-        switch (headquartersPrincipal.weather[0].icon) {
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].cloud:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].cloudIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].snow:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].snowIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].rain:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].rainIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].haze:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].hazeIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].hot:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].hotIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].daySunny:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].daySunnyIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].fog:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].fogIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].cloudy:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].cloudyIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].sleet:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].sleetIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].hail:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].hailIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].thunderstorm:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].thunderstormIcon;
-                break;
-            case _enums_Weather_enum__WEBPACK_IMPORTED_MODULE_0__["Weather"].windy:
-                headquartersPrincipal.iconFontawesome = _enums_Icons_enum__WEBPACK_IMPORTED_MODULE_1__["ClassIcon"].windyIcon;
-                break;
-            default:
-                break;
-        }
-        return headquartersPrincipal;
-    }
-}
 
 
 /***/ }),
@@ -439,64 +370,6 @@ var EnviromentEnum;
 (function (EnviromentEnum) {
     EnviromentEnum["DEV_Enviroment"] = "https://run.mocky.io/v3/";
 })(EnviromentEnum || (EnviromentEnum = {}));
-
-
-/***/ }),
-
-/***/ "./src/app/shared/enums/Icons.enum.ts":
-/*!********************************************!*\
-  !*** ./src/app/shared/enums/Icons.enum.ts ***!
-  \********************************************/
-/*! exports provided: ClassIcon */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassIcon", function() { return ClassIcon; });
-var ClassIcon;
-(function (ClassIcon) {
-    ClassIcon["cloudIcon"] = "fas fa-3x fa-cloud";
-    ClassIcon["snowIcon"] = "fas fa-3x fa-snowflake";
-    ClassIcon["rainIcon"] = "fas fa-3x  fa-cloud-showers-heavy";
-    ClassIcon["hazeIcon"] = "fas fa-3x  fa-smog";
-    ClassIcon["hotIcon"] = "fas fa-3x  fa-sun";
-    ClassIcon["daySunnyIcon"] = "fas fa-3x  fa-sun";
-    ClassIcon["fogIcon"] = "fas fa-3x   fa-smog";
-    ClassIcon["cloudyIcon"] = "fas fa-3x  fa-cloud";
-    ClassIcon["sleetIcon"] = "fas fa-3x  fa-snowflake";
-    ClassIcon["hailIcon"] = "fas fa-3x  fa-cloud-rain";
-    ClassIcon["thunderstormIcon"] = "fas fa-3x  fa-cloud-rain";
-    ClassIcon["windyIcon"] = "fas fa-3x  fa-wind";
-})(ClassIcon || (ClassIcon = {}));
-
-
-/***/ }),
-
-/***/ "./src/app/shared/enums/Weather.enum.ts":
-/*!**********************************************!*\
-  !*** ./src/app/shared/enums/Weather.enum.ts ***!
-  \**********************************************/
-/*! exports provided: Weather */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Weather", function() { return Weather; });
-var Weather;
-(function (Weather) {
-    Weather["cloud"] = "cloud";
-    Weather["snow"] = "snow";
-    Weather["rain"] = "rain";
-    Weather["haze"] = "haze";
-    Weather["hot"] = "hot";
-    Weather["daySunny"] = "day-sunny";
-    Weather["fog"] = "fog";
-    Weather["cloudy"] = "cloudy";
-    Weather["sleet"] = "sleet";
-    Weather["hail"] = "hail";
-    Weather["thunderstorm"] = "thunderstorm";
-    Weather["windy"] = "windy";
-})(Weather || (Weather = {}));
 
 
 /***/ }),
