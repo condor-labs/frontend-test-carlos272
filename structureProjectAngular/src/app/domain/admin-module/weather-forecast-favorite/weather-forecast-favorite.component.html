@@ -1,14 +1,16 @@
-<div id="widget-favorite">
-    <div *ngFor="let headquartersOther of headquartersOthers">
-        <div class="widget-icon">
-            <i [ngClass]=" headquartersOther.iconFontawesome"></i>
+<div class="div_1" id="widget-favorite">
+    <div class="div_3">
+        <div class="div_2" *ngFor="let headquartersOther of headquartersOthers">
+            <div class="widget-icon">
+                <i [ngClass]=" headquartersOther.iconFontawesome"></i>
+            </div>
+            <div class="widget-headquarter-name">{{headquartersOther.name}}</div>
+            <div class="widget-temperature">{{headquartersOther.tempCelcius }}°C</div>
 
+            <p> {{headquartersOther.description}}</p>
+            <div class="widget-humidity"> Humidity {{headquartersOther.main.humidity}}%</div>
+            <div class="widget-wind"> wind {{headquartersOther.wind.speed}}m/s</div>
         </div>
-        <div class="widget-headquarter-name">{{headquartersOther.name}}</div>
-        <div class="widget-headquarter">{{headquartersOther.tempCelcius }}°C</div>
 
-        <p> {{headquartersOther.description}}</p>
-        <div class="widget-headquarter"> Humidity {{headquartersOther.main.humidity}}%</div>
-        <div class="widget-headquarter"> wind {{headquartersOther.wind.speed}}m/s</div>
     </div>
 </div>

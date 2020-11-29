@@ -21,7 +21,6 @@ export class WeatherForecastPrincipalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.headquartersList = this.adminService.headquartersList;
     this.extendedForecastList = this.adminService.extendedForecastList;
     this.citiesWorldList = this.adminService.citiesWorldList;

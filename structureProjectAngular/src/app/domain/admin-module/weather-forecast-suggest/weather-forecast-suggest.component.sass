@@ -1,62 +1,43 @@
 
 @import '../../../../styles.sass'
-#widget-header
+
+#widget-suggest
     display: block
     border-radius: 10px
-    width: 700px
-    height: 320px
-    color: black
-    font-family: Verdana, sans-serif, 'Segoe UI', Tahoma, Geneva
+    width: 200px
+    height: 220px
+    background: $LINEARGRADIENT
+    color: $GENERALCOLOR
+    font-family: $FONTFAMILY
 
-.widget-headquarter
-    font-size: 32px
-    margin-top: 5px
-    color: #021949
+.widget-humidity, .widget-temperature, .widget-wind
+    display: block
+    margin: 0 auto
+    width: fit-content
+
+.widget-day
     display: block
     margin: 0 auto
     width: fit-content
 
 .widget-icon
-    display: block
-    margin: 0 auto
-    width: fit-content
+    display: flex
+    flex-direction: column
+    flex: 1
+    align-items: flex-end
 
-.sunny
-    margin-top: 10px
-    color: $YELLOWCOLOR
-    filter: drop-shadow( 1px 1px 10px yellow)
 
-.night
-    margin-top: 10px
-    color: black
-    filter: drop-shadow( 1px 1px 10px black)
-
-.cloudMove
-    margin-top: -40px
-
-.cloud
-    color: rgb(104, 175, 197)
-    filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197))
-    animation-name: move
+.moveCloud
+    color: rgb(175, 219, 233)
+    filter: drop-shadow( 1px 1px 5px rgb(188, 233, 247))
     animation-iteration-count: infinite
     animation-duration: 10s
+    animation-name: displacement
     animation-timing-function: ease-in-out
     animation-direction: alternate
 
-.widget-carousel
-    width: 400px
-    height: 500px
-    display: flex
-    overflow-x: auto
-    webkit-overflow-scrolling: touch
-
-.slide
-    width: 300px
-    flex-shrink: 0
-    height: 100%
-
-@keyframes move
+@keyframes displacement
     from
-        margin-left: -65px
+        margin-left: -15px
     to
-        margin-left: 75px
+        margin-left: 15px
