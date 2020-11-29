@@ -250,6 +250,7 @@ var ValidationIconClass = /** @class */ (function () {
             default:
                 break;
         }
+        return headquartersPrincipal;
     };
     return ValidationIconClass;
 }());

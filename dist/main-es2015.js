@@ -242,6 +242,7 @@ class ValidationIconClass {
             default:
                 break;
         }
+        return headquartersPrincipal;
     }
 }
 
