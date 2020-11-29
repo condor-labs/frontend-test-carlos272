@@ -13,4 +13,5 @@ export interface Headquarter {
   weather: Weather[];
   wind: Wind;
   iconFontawesome?: string;
+  tempCelcius?: number;
 }

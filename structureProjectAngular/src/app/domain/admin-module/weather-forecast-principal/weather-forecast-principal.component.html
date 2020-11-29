@@ -1,10 +1,11 @@
+<h1>Listado</h1>
 <div id="widget-header" [ngStyle]="{'background-image': 'url(' + headquartersPrincipal.image + ')'}">
     <div class="widget-icon">
         <i [ngClass]=" headquartersPrincipal.iconFontawesome"></i>
 
     </div>
     <div class="widget-city">{{headquartersPrincipal.name}}</div>
-    <div class="widget-headquarter">{{headquartersPrincipal.main.temp | temperatureConverter : 'K' }}°C</div>
+    <div class="widget-headquarter">{{headquartersPrincipal.main.temp }}°C</div>
     <div class="widget-headquarter"> Humidity {{headquartersPrincipal.main.humidity}}%</div>
     <div class="widget-headquarter"> wind {{headquartersPrincipal.wind.speed}}m/s</div>
 </div>

@@ -3,7 +3,6 @@ import { AdminService } from '../admin.service';
 import { Headquarter } from '../../../shared/interfaces/Headquarter';
 import { ExtendedForecast } from '../../../shared/interfaces/ExtendedForecast';
 import { CitiesWorld } from '../../../shared/interfaces/CitiesWorld';
-import { ValidationIconClass } from '../../../shared/classes/ValidationIconClass';
 
 @Component({
   selector: 'app-weather-forecast-suggest',
@@ -19,11 +18,10 @@ export class WeatherForecastSuggestComponent implements OnInit {
   bestDayReturn: any;
 
   constructor(
-    private adminService: AdminService,
-    private validationIconClass: ValidationIconClass
-  ) { }
+    private adminService: AdminService ) { }
 
   ngOnInit() {
+    this.bestDayReturn = [];
     this.headquartersList = this.adminService.headquartersList;
     this.extendedForecastList = this.adminService.extendedForecastList;
     this.citiesWorldList = this.adminService.citiesWorldList;
@@ -32,11 +30,12 @@ export class WeatherForecastSuggestComponent implements OnInit {
     this.validationDate();
     this.validationIconInternal();
     this.bestDayReturn = this.bestDay();
+    this.bestDayReturn.main.temp = this.adminService.convertKelvinToCelcius(this.bestDayReturn.main.temp);
   }
   validationIconInternal() {
     this.sixWeathers = this.sixWeathers && this.sixWeathers.map(value => ({
       ...value,
-      iconFontawesome: this.validationIconClass.validationIcon(value).iconFontawesome
+      iconFontawesome: this.adminService.validationIcon(value).iconFontawesome
     }))
   }
   bestDay() {

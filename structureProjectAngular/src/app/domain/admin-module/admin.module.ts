@@ -12,16 +12,14 @@ import { WeatherForecastSliderComponent } from './weather-forecast-slider/weathe
 import { WeatherForecastFavoriteComponent } from './weather-forecast-favorite/weather-forecast-favorite.component';
 import { WeatherForecastSuggestComponent } from './weather-forecast-suggest/weather-forecast-suggest.component';
 import { CitiesWorldComponent } from './cities-world/cities-world.component';
-import { TemperatureConverterPipe } from '../../TemperatureConverterPipe';
 
 @NgModule({
-  declarations: [AdminModuleComponent, WeatherForecastPrincipalComponent, WeatherForecastSliderComponent, WeatherForecastFavoriteComponent, WeatherForecastSuggestComponent, CitiesWorldComponent,
-    TemperatureConverterPipe],
+  declarations: [AdminModuleComponent, WeatherForecastPrincipalComponent, WeatherForecastSliderComponent, WeatherForecastFavoriteComponent, WeatherForecastSuggestComponent, CitiesWorldComponent],
   imports: [
     CommonModule,
     FormsModule,
     SharedModule,
-    AdminRoutingModule
+    AdminRoutingModule,
   ],
   entryComponents: [AdminModuleComponent],
   exports: [RouterModule]

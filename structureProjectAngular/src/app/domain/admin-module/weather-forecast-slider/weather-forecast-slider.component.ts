@@ -3,7 +3,6 @@ import { AdminService } from '../admin.service';
 import { Headquarter } from '../../../shared/interfaces/Headquarter';
 import { ExtendedForecast } from '../../../shared/interfaces/ExtendedForecast';
 import { CitiesWorld } from '../../../shared/interfaces/CitiesWorld';
-import { ValidationIconClass } from '../../../shared/classes/ValidationIconClass';
 
 @Component({
   selector: 'app-weather-forecast-slider',
@@ -18,9 +17,7 @@ export class WeatherForecastSliderComponent implements OnInit {
   sixWeathers: any;
 
   constructor(
-    private adminService: AdminService,
-    private validationIconClass: ValidationIconClass
-  ) { }
+    private adminService: AdminService) { }
 
   ngOnInit() {
     this.headquartersList = this.adminService.headquartersList;
@@ -30,12 +27,15 @@ export class WeatherForecastSliderComponent implements OnInit {
     if (this.headquartersPrincipal.id === this.extendedForecastList.city.id) this.sixWeathers = this.extendedForecastList.list;
     this.validationDate();
     this.validationIconInternal();
-
-    /*console.log("headquartersList", this.headquartersList);
-    console.log("extendedForecastList", this.extendedForecastList);
-    console.log("citiesWorldList", this.citiesWorldList);*/
   }
 
+  validationIconInternal() {
+    this.sixWeathers = this.sixWeathers && this.sixWeathers.map(value => ({
+      ...value,
+      iconFontawesome: this.adminService.validationIcon(value).iconFontawesome,
+      tempCelcius: this.adminService.convertKelvinToCelcius(value.main.temp)
+    }))
+  }
   validationDate(): void {
     if (this.sixWeathers) {
       let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -47,10 +47,5 @@ export class WeatherForecastSliderComponent implements OnInit {
     }
 
   }
-  validationIconInternal() {
-    this.sixWeathers = this.sixWeathers && this.sixWeathers.map(value => ({
-      ...value,
-      iconFontawesome: this.validationIconClass.validationIcon(value).iconFontawesome
-    }))
-  }
+
 }

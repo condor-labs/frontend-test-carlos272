@@ -3,9 +3,6 @@ import { AdminService } from '../admin.service';
 import { Headquarter } from '../../../shared/interfaces/Headquarter';
 import { ExtendedForecast } from '../../../shared/interfaces/ExtendedForecast';
 import { CitiesWorld } from '../../../shared/interfaces/CitiesWorld';
-import { Weather } from '../../../shared/enums/Weather.enum';
-import { ClassIcon } from '../../../shared/enums/Icons.enum';
-import { ValidationIconClass } from '../../../shared/classes/ValidationIconClass';
 
 @Component({
   selector: 'app-cities-world',

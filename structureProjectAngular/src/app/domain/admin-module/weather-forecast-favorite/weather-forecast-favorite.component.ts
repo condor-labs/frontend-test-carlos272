@@ -3,8 +3,6 @@ import { AdminService } from '../admin.service';
 import { Headquarter } from '../../../shared/interfaces/Headquarter';
 import { ExtendedForecast } from '../../../shared/interfaces/ExtendedForecast';
 import { CitiesWorld } from '../../../shared/interfaces/CitiesWorld';
-import { ValidationIconClass } from '../../../shared/classes/ValidationIconClass';
-
 @Component({
   selector: 'app-weather-forecast-favorite',
   templateUrl: './weather-forecast-favorite.component.html',
@@ -16,21 +14,23 @@ export class WeatherForecastFavoriteComponent implements OnInit {
   citiesWorldList: CitiesWorld[];
   headquartersOthers: Headquarter[];
   constructor(
-    private adminService: AdminService,
-    private validationIconClass: ValidationIconClass
+    private adminService: AdminService
   ) { }
 
   ngOnInit() {
     this.headquartersList = this.adminService.headquartersList;
     this.headquartersOthers = this.headquartersList.filter(x => !x.main_headquarter);
     this.validationIconInternal();
+    this.headquartersOthers = this.headquartersOthers && this.headquartersOthers.map(value => ({
+      ...value,
+      tempCelcius: this.adminService.convertKelvinToCelcius(value.main.temp)
+    }))
   }
   validationIconInternal() {
-    if (this.headquartersOthers) {
-      for (let i = 0; i < this.headquartersOthers.length; i++) {
-        let iconClass = this.validationIconClass.validationIcon(this.headquartersOthers[i]);
-        this.headquartersOthers[i].iconFontawesome = iconClass.iconFontawesome;
-      }
-    }
+    this.headquartersOthers = this.headquartersOthers && this.headquartersOthers.map(value => ({
+      ...value,
+      iconFontawesome: this.adminService.validationIcon(value).iconFontawesome,
+      tempCelcius: this.adminService.convertKelvinToCelcius(value.main.temp)
+    }))
   }
 }

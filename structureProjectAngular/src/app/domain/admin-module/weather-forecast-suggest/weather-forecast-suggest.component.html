@@ -2,7 +2,7 @@
     <div class="widget-icon">
         <i [ngClass]=" bestDayReturn.iconFontawesome"></i>
     </div>
-    <div class="widget-headquarter">{{bestDayReturn.main.temp | temperatureConverter : 'K' }}°C</div>
+    <div class="widget-headquarter">{{bestDayReturn.main.temp}}°C</div>
     <div class="widget-headquarter">{{bestDayReturn.name}}</div>
     <div class="widget-day">{{bestDayReturn.day}}</div>
     <div class="widget-headquarter"> Humidity {{bestDayReturn.main.humidity}}%</div>
