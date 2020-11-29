@@ -1,1 +1,10 @@
-<p>weather-forecast-suggest works!</p>
+<div id="widget-suggest">
+    <div class="widget-icon">
+        <i [ngClass]=" bestDayReturn.iconFontawesome"></i>
+    </div>
+    <div class="widget-headquarter">{{bestDayReturn.main.temp | temperatureConverter : 'K' }}°C</div>
+    <div class="widget-headquarter">{{bestDayReturn.name}}</div>
+    <div class="widget-day">{{bestDayReturn.day}}</div>
+    <div class="widget-headquarter"> Humidity {{bestDayReturn.main.humidity}}%</div>
+    <div class="widget-headquarter"> wind {{bestDayReturn.wind.speed}}m/s</div>
+</div>

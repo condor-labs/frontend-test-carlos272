@@ -4,7 +4,7 @@ import { forkJoin } from "rxjs";
 @Component({
   selector: "app-admin-module",
   templateUrl: "./admin-module.component.html",
-  styleUrls: ["./admin-module.component.css"]
+  styleUrls: ["./admin-module.component.sass"]
 })
 export class AdminModuleComponent implements OnInit {
 

@@ -1,6 +1,9 @@
 <div class="widget-carousel">
     <div class="widget-carousel-item" *ngFor="let sixWeather of sixWeathers">
         <div id="widget-header">
+            <div class="widget-icon">
+                <i [ngClass]="sixWeather.iconFontawesome"></i>
+            </div>
             <div class="widget-headquarter">{{sixWeather.main.temp | temperatureConverter : 'K' }}°C</div>
             <div class="widget-day">{{sixWeather.day}}</div>
             <div class="widget-headquarter"> Humidity {{sixWeather.main.humidity}}%</div>

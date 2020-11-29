@@ -15,8 +15,6 @@ export class WeatherForecastPrincipalComponent implements OnInit {
   headquartersList: Headquarter[];
   extendedForecastList: ExtendedForecast;
   citiesWorldList: CitiesWorld[];
-
-
   headquartersPrincipal: Headquarter;
   constructor(
     private adminService: AdminService,

@@ -1,1 +1,10 @@
-<p>cities-world works!</p>
+<div class="widget-cities" *ngFor="let recommendedCitie of recommendedCities">
+    <div class="widget-card" [ngStyle]="{'background-image': 'url(' + recommendedCitie.image + ')'}">
+        <div class="widget-carousel-item">
+            <div id="widget-header">
+                <div class="widget-city-name">{{recommendedCitie.name}}</div>
+            </div>
+        </div>
+
+    </div>
+</div>

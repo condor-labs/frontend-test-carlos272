@@ -7,7 +7,7 @@ export class ValidationIconClass {
 
   constructor() { }
 
-  validationIcon(headquartersPrincipal): void {
+  validationIcon(headquartersPrincipal): any {
     switch (headquartersPrincipal.weather[0].icon) {
       case Weather.cloud:
         headquartersPrincipal.iconFontawesome = ClassIcon.cloudIcon;
@@ -56,5 +56,6 @@ export class ValidationIconClass {
       default:
         break;
     }
+    return headquartersPrincipal;
   }
 }

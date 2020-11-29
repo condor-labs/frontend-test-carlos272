@@ -10,5 +10,6 @@ export interface CitiesWorld {
   uri: string;
   weather: Weather[];
   wind: Wind[];
+  name: string;
 }
 

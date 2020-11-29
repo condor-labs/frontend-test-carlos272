@@ -3,8 +3,6 @@ import { AdminService } from '../admin.service';
 import { Headquarter } from '../../../shared/interfaces/Headquarter';
 import { ExtendedForecast } from '../../../shared/interfaces/ExtendedForecast';
 import { CitiesWorld } from '../../../shared/interfaces/CitiesWorld';
-import { Weather } from '../../../shared/enums/Weather.enum';
-import { ClassIcon } from '../../../shared/enums/Icons.enum';
 import { ValidationIconClass } from '../../../shared/classes/ValidationIconClass';
 
 @Component({
@@ -30,10 +28,8 @@ export class WeatherForecastSliderComponent implements OnInit {
     this.citiesWorldList = this.adminService.citiesWorldList;
     this.headquartersPrincipal = this.headquartersList.find(x => x.main_headquarter);
     if (this.headquartersPrincipal.id === this.extendedForecastList.city.id) this.sixWeathers = this.extendedForecastList.list;
-    this.validationIconClass.validationIcon(this.headquartersPrincipal);
     this.validationDate();
-    console.log("headquartersPrincipal", this.headquartersPrincipal);
-    console.log("sixWeather", this.sixWeathers);
+    this.validationIconInternal();
 
     /*console.log("headquartersList", this.headquartersList);
     console.log("extendedForecastList", this.extendedForecastList);
@@ -44,12 +40,17 @@ export class WeatherForecastSliderComponent implements OnInit {
     if (this.sixWeathers) {
       let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       for (let i = 0; i < this.sixWeathers.length; i++) {
-        let d = new Date(this.sixWeathers[i].date);
-        let dayName = days[d.getDay()];
+        let day = new Date(this.sixWeathers[i].date);
+        let dayName = days[day.getDay()];
         this.sixWeathers[i].day = dayName;
       }
     }
 
   }
-
+  validationIconInternal() {
+    this.sixWeathers = this.sixWeathers && this.sixWeathers.map(value => ({
+      ...value,
+      iconFontawesome: this.validationIconClass.validationIcon(value).iconFontawesome
+    }))
+  }
 }
