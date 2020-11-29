@@ -1,15 +1,28 @@
-<!-- <div id="slideshow">
-    <div class="slide-wrapper">
+<button (click)="previusPage()" class="btn"><i class="fas fa-arrow-left"></i></button>
+<button (click)="nextPage()" class="btn"><i class="fas fa-arrow-right"></i></button>
+
+<br>
+<br>
+<div class="div_1" id="widget-favorite">
+    <div class="div_3">
+        <div class="div_2" *ngFor="let shownItem of shownItems">
+            <div class="widget-icon">
+                <i [ngClass]=" shownItem.iconFontawesome"></i>
+            </div>
+            <div class="widget-day">{{shownItem.day}}</div>
+            <div class="widget-temperature">{{shownItem.tempCelcius }}°C</div>
+            <div class="widget-humidity">
+                <div id="humidity-circle">
+
+                </div>
+                {{headquartersPrincipal.main.humidity}}%
+            </div>
+            <div class="widget-wind">
+                <div id="wind-circle">
+
+                </div>
+                {{headquartersPrincipal.wind.speed}}m/s
+            </div>
+        </div>
     </div>
-</div> -->
-<div  *ngFor="let shownItem of shownItems">
-    <div class="widget-icon">
-        <i [ngClass]="shownItem.iconFontawesome"></i>
-    </div>
-    <div class="widget-temperature">{{shownItem.tempCelcius }}°C</div>
-    <div class="widget-day">{{shownItem.day}}</div>
-    <div class="widget-humidity"> Humidity {{shownItem.main.humidity}}%</div>
-    <div class="widget-wind"> wind {{shownItem.wind.speed}}m/s</div>
 </div>
-<button (click)="nextPage()">Siguiente</button>
-<button (click)="previusPage()">Anterior</button>
