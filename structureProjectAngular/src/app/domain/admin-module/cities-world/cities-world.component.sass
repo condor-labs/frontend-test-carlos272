@@ -1,64 +1,56 @@
 
 @import '../../../../styles.sass'
-#widget-cities
+
+.widget-city-name
+    display: flex
+    flex: 1
+    flex-direction: column
+    align-items: flex-start
+    position: relative
+    color: white
+    font-size: 30px
+    left: 395px
+    bottom: -53px
+#widget-header
     display: block
     border-radius: 10px
     width: 700px
     height: 320px
     color: black
     font-family: Verdana, sans-serif, 'Segoe UI', Tahoma, Geneva
+.div_1
 
-.widget-headquarter
-    font-size: 32px
-    margin-top: 5px
-    color: #021949
+    height: 350px
+    width: 100%
+    margin: auto
+    overflow-y: hidden
+    overflow-x: auto
+
+.div_3
+
+    height: 350px
+    width: 150%
+
+.div_2
+    height: 500px
+    width: 520px
+    float: left
     display: block
-    margin: 0 auto
-    width: fit-content
-.widget-city
+    border-radius: 10px
+    color: $GENERALCOLOR
+    font-family: $FONTFAMILY
+
+.button
     display: flex
     flex: 1
     flex-direction: column
     align-items: flex-start
     position: relative
     bottom: 35px
-    left: 40px
-    font-size: 18px
     background-color: darkviolet
     width: max-content
     padding: 9px
     border-radius: 30%
-
-.widget-icon
-    display: flex
-    flex-direction: column
-    flex: 1
-    align-items: flex-end
-
-.sunny
-    margin-top: 10px
-    color: $YELLOWCOLOR
-    filter: drop-shadow( 1px 1px 10px yellow)
-
-.night
-    margin-top: 10px
-    color: black
-    filter: drop-shadow( 1px 1px 10px black)
-
-.cloudMove
-    margin-top: -40px
-
-.cloud
-    color: rgb(104, 175, 197)
-    filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197))
-    animation-name: move
-    animation-iteration-count: infinite
-    animation-duration: 10s
-    animation-timing-function: ease-in-out
-    animation-direction: alternate
-
-@keyframes move
-    from
-        margin-left: -65px
-    to
-        margin-left: 75px
+    left: 200px
+    font-size: 15px
+    top: 100px

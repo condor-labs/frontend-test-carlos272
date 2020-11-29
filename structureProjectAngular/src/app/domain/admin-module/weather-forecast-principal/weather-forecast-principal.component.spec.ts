@@ -1,67 +1,41 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AdminService } from '../admin.service';
 import { WeatherForecastPrincipalComponent } from './weather-forecast-principal.component';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-import { AdminModuleComponent } from '../admin-module.component';
 
-import { WeatherForecastSliderComponent } from '../weather-forecast-slider/weather-forecast-slider.component';
-import { WeatherForecastFavoriteComponent } from '../weather-forecast-favorite/weather-forecast-favorite.component';
-import { WeatherForecastSuggestComponent } from '../weather-forecast-suggest/weather-forecast-suggest.component';
-import { CitiesWorldComponent } from '../cities-world/cities-world.component';
-import { By } from '@Angular/platform-browser';
+class MockUserService {
+  isLoggedIn = true;
+  user = { name: 'Test User'};
+}
 
-describe('WeatherForecastPrincipalComponent', () => {
+describe('WeatherForecastPrincipalComponentComponent', () => {
   let component: WeatherForecastPrincipalComponent;
   let fixture: ComponentFixture<WeatherForecastPrincipalComponent>;
-
-  let weatherForecastPrincipalComponent;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        WeatherForecastPrincipalComponent,
-        AdminModuleComponent,
-        WeatherForecastSliderComponent,
-        WeatherForecastFavoriteComponent,
-        WeatherForecastSuggestComponent,
-        CitiesWorldComponent
-      ],
+  
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ WeatherForecastPrincipalComponent ],
       providers: [
         WeatherForecastPrincipalComponent,
-        AdminModuleComponent,
-        WeatherForecastSliderComponent,
-        WeatherForecastFavoriteComponent,
-        WeatherForecastSuggestComponent,
-        CitiesWorldComponent
-      ],
-      imports: [
-        HttpClientTestingModule
+        { provide: AdminService, useClass: MockUserService }
       ]
     })
-      .compileComponents();
-    console.log('beforeEach');
-    weatherForecastPrincipalComponent = TestBed.get(WeatherForecastPrincipalComponent)
+    .compileComponents();
+  });
 
-  }));
   beforeEach(() => {
     fixture = TestBed.createComponent(WeatherForecastPrincipalComponent);
     component = fixture.componentInstance;
+    //component = TestBed.inject
     fixture.detectChanges();
   });
-  it('hola', () => {
-    const valor = weatherForecastPrincipalComponent.myVar
-    expect(valor).toEqual('Hola Mundo')
-  })
-  it('debe tener la clase addItem', () => {
-    //    Add Item Debug Ele comes out as not null.
-    const addItemDebugElement = fixture.debugElement.query(By.css('.widget-header'));
-    console.log('addItemDebugElement', addItemDebugElement);
-    expect(addItemDebugElement).toBeTruthy();
-  })
 
-  it("should be in HTML page", function () {
-    const de = fixture.debugElement.query(By.css('#Listado'));
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
+
+  // it('should create two children', () => {
+  //   const compiled = fixture.nativeElement;
+  //   expect(compiled.querySelector('div').children.length).toBe(testArray.length);
+  // })
+
 });
-
-

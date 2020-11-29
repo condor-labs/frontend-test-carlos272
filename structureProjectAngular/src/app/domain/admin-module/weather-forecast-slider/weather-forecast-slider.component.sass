@@ -1,26 +1,16 @@
 
 @import '../../../../styles.sass'
-#widget-header
-    display: block
-    border-radius: 10px
-    width: 700px
-    height: 320px
-    color: black
-    font-family: Verdana, sans-serif, 'Segoe UI', Tahoma, Geneva
 
-.widget-headquarter
-    font-size: 32px
-    margin-top: 5px
-    color: #021949
+.widget-humidity, .widget-temperature, .widget-wind, .widget-day
     display: block
     margin: 0 auto
     width: fit-content
 
 .widget-icon
-    display: block
-    margin: 0 auto
-    width: fit-content
-
+    display: flex
+    flex-direction: column
+    flex: 1
+    align-items: flex-end
 .sunny
     margin-top: 10px
     color: $YELLOWCOLOR
@@ -43,13 +33,6 @@
     animation-timing-function: ease-in-out
     animation-direction: alternate
 
-.widget-carousel
-    width: 400px
-    height: 500px
-    display: flex
-    overflow-x: auto
-    webkit-overflow-scrolling: touch
-
 .slide
     width: 300px
     flex-shrink: 0
@@ -60,3 +43,38 @@
         margin-left: -65px
     to
         margin-left: 75px
+
+#slideshow
+    overflow: hidden
+    height: 310px
+    width: 728px
+    border-radius: 10px
+    background: $LINEARGRADIENT
+    color: $GENERALCOLOR
+    font-family: $FONTFAMILY
+
+.slide-wrapper
+    width: 1912px
+    -webkit-animation: slide 18s ease infinite
+
+.slide
+    float: left
+    height: 310px
+    width: 728px
+
+
+@keyframes slide
+    20%
+        margin-left: 0px
+    30%
+        margin-left: -728px
+    50%
+        margin-left: -728px
+    60%
+        margin-left: -1456px
+    70%
+        margin-left: -1456px
+    80%
+        margin-left: -2184px
+    90%
+        margin-left: -2184px

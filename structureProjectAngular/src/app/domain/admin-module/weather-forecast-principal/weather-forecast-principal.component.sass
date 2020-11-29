@@ -8,6 +8,41 @@
     color: black
     font-family: Verdana, sans-serif, 'Segoe UI', Tahoma, Geneva
 
+.widget-day
+    display: block
+    width: fit-content
+
+.widget-humidity
+    display: flex
+    flex: 1
+    color: white
+    margin-left: 27px
+
+.widget-temperature
+    font-size: 60px
+    color: #ffe600
+    margin-left: 22px
+
+#humidity-circle
+    border-radius: 50%
+    background-color: #D95ECB
+    border: transparent solid 2px
+    height: 10px
+    width: 10px
+#wind-circle
+    border-radius: 50%
+    background-color: #597AEF
+    border: transparent solid 2px
+    height: 10px
+    width: 10px
+.widget-wind
+    position: relative
+    display: flex
+    flex: 1
+    color: white
+    left: 78px
+    bottom: 18px
+
 .widget-headquarter
     font-size: 32px
     margin-top: 5px
@@ -28,12 +63,20 @@
     width: max-content
     padding: 9px
     border-radius: 30%
+    color: white
+    font-size: 13px
 
 .widget-icon
     display: flex
     flex-direction: column
     flex: 1
+    color: #008eb9
     align-items: flex-end
+    > svg
+        position: relative
+        bottom: 12px
+        right: 10px
+        font-size: 81px
 
 .sunny
     margin-top: 10px

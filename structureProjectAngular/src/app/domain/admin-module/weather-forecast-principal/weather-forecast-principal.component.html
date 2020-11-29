@@ -4,7 +4,18 @@
 
     </div>
     <div class="widget-city">{{headquartersPrincipal.name}}</div>
-    <div class="widget-headquarter">{{headquartersPrincipal.main.temp }}°C</div>
-    <div class="widget-headquarter"> Humidity {{headquartersPrincipal.main.humidity}}%</div>
-    <div class="widget-headquarter"> wind {{headquartersPrincipal.wind.speed}}m/s</div>
+    <div class="widget-temperature">{{headquartersPrincipal.main.temp }}°C</div>
+    
+    <div class="widget-humidity">
+        <div id="humidity-circle">
+
+        </div>
+        {{headquartersPrincipal.main.humidity}}%</div>
+    <div class="widget-wind">
+        <div id="wind-circle">
+            
+        </div>
+          {{headquartersPrincipal.wind.speed}}m/s</div>
 </div>
+
+

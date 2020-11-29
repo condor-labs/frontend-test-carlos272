@@ -14,8 +14,11 @@ export class WeatherForecastSliderComponent implements OnInit {
   extendedForecastList: ExtendedForecast;
   citiesWorldList: CitiesWorld[];
   headquartersPrincipal: Headquarter;
-  sixWeathers: any;
-
+  sixWeathers: any[];
+  totalPages: number;
+  shownItems: any[];
+  itemsPerSlide: number = 3;
+  pageIndex: number = 0;
   constructor(
     private adminService: AdminService) { }
 
@@ -27,6 +30,22 @@ export class WeatherForecastSliderComponent implements OnInit {
     if (this.headquartersPrincipal.id === this.extendedForecastList.city.id) this.sixWeathers = this.extendedForecastList.list;
     this.validationDate();
     this.validationIconInternal();
+    this.initialData();
+
+  }
+
+  initialData() {
+    this.totalPages = Math.round(this.sixWeathers.length/this.itemsPerSlide)
+    this.shownItems = this.sixWeathers.slice(this.pageIndex, this.itemsPerSlide);
+  }
+  nextPage() {
+    this.pageIndex += this.itemsPerSlide;
+    this.shownItems = this.sixWeathers.slice(this.pageIndex, this.itemsPerSlide + this.pageIndex);
+  }
+
+  previusPage() {
+    this.pageIndex -= this.itemsPerSlide;
+    this.shownItems = this.sixWeathers.slice(this.pageIndex, this.pageIndex - this.itemsPerSlide);
   }
 
   validationIconInternal() {
