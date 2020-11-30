@@ -25,7 +25,6 @@ export class WeatherForecastSliderComponent implements OnInit {
   ngOnInit() {
     this.headquartersList = this.adminService.headquartersList;
     this.extendedForecastList = this.adminService.extendedForecastList;
-    this.citiesWorldList = this.adminService.citiesWorldList;
     this.headquartersPrincipal = this.headquartersList.find(x => x.main_headquarter);
     if (this.headquartersPrincipal.id === this.extendedForecastList.city.id) this.sixWeathers = this.extendedForecastList.list;
     this.validationDate();
@@ -34,10 +33,7 @@ export class WeatherForecastSliderComponent implements OnInit {
 
   }
 
-  initialData() {
-    this.totalPages = Math.round(this.sixWeathers.length / this.itemsPerSlide)
-    this.shownItems = this.sixWeathers.slice(this.pageIndex, this.itemsPerSlide);
-  }
+
   validationIconInternal() {
     this.sixWeathers = this.sixWeathers && this.sixWeathers.map(value => ({
       ...value,
@@ -54,7 +50,10 @@ export class WeatherForecastSliderComponent implements OnInit {
         this.sixWeathers[i].day = dayName;
       }
     }
-
+  }
+  initialData() {
+    this.totalPages = Math.round(this.sixWeathers.length / this.itemsPerSlide)
+    this.shownItems = this.sixWeathers.slice(this.pageIndex, this.itemsPerSlide);
   }
   nextPage() {
     if (this.pageIndex === 0) {

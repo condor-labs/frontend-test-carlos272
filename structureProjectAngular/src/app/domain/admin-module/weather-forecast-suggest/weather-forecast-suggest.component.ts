@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { Headquarter } from '../../../shared/interfaces/Headquarter';
 import { ExtendedForecast } from '../../../shared/interfaces/ExtendedForecast';
-import { CitiesWorld } from '../../../shared/interfaces/CitiesWorld';
-
 @Component({
   selector: 'app-weather-forecast-suggest',
   templateUrl: './weather-forecast-suggest.component.html',
@@ -12,19 +10,17 @@ import { CitiesWorld } from '../../../shared/interfaces/CitiesWorld';
 export class WeatherForecastSuggestComponent implements OnInit {
   headquartersList: Headquarter[];
   extendedForecastList: ExtendedForecast;
-  citiesWorldList: CitiesWorld[];
   headquartersPrincipal: Headquarter;
   sixWeathers: any;
   bestDayReturn: any;
 
   constructor(
-    private adminService: AdminService ) { }
+    private adminService: AdminService) { }
 
   ngOnInit() {
     this.bestDayReturn = [];
     this.headquartersList = this.adminService.headquartersList;
     this.extendedForecastList = this.adminService.extendedForecastList;
-    this.citiesWorldList = this.adminService.citiesWorldList;
     this.headquartersPrincipal = this.headquartersList.find(x => x.main_headquarter);
     if (this.headquartersPrincipal.id === this.extendedForecastList.city.id) this.sixWeathers = this.extendedForecastList.list;
     this.validationDate();
@@ -68,7 +64,6 @@ export class WeatherForecastSuggestComponent implements OnInit {
         this.sixWeathers[i].day = dayName;
       }
     }
-
   }
 
 }

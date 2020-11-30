@@ -53,7 +53,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [{
-        path: 'weather',
+        path: '',
         loadChildren: () => __webpack_require__.e(/*! import() | domain-admin-module-admin-module */ "domain-admin-module-admin-module").then(__webpack_require__.bind(null, /*! ./domain/admin-module/admin.module */ "./src/app/domain/admin-module/admin.module.ts"))
             .then(mod => mod.AdminModule),
         data: { preload: true },

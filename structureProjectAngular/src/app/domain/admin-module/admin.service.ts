@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { HttpService } from '../../shared/services/http.service';
 import { ConfigService } from '../../shared/services/config.service';
 import { Headquarter } from '../../shared/interfaces/Headquarter';
 import { ExtendedForecast } from '../../shared/interfaces/ExtendedForecast';
 import { CitiesWorld } from '../../shared/interfaces/CitiesWorld';
-
 import { Weather } from '../../shared/enums/Weather.enum';
 import { ClassIcon } from '../../shared/enums/Icons.enum';
+import { EnviromentResource } from '../../shared/enums/EnviromentResource.enum';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,15 +18,14 @@ export class AdminService {
   extendedForecastList: ExtendedForecast;
   citiesWorldList: CitiesWorld[];
 
-  headquarters = '818d0158-727b-461e-9f76-06734ed7e582';
-  extendedForecast = '73c29128-d158-40db-aeae-ea78a0d762b7';
-  citiesWorld = 'f8926877-849a-416f-8226-9fd9d9fc5e07';
+  headquarters = EnviromentResource.Headquarters;
+  extendedForecast = EnviromentResource.ExtendedForecast;
+  citiesWorld = EnviromentResource.CitiesWorld;
   constructor(
     private httpService: HttpService,
     private configService: ConfigService
   ) {
   }
-
   /**
   * @description this method keeps headquarters in the service
   * @author Carlos Almanza
@@ -91,12 +90,19 @@ export class AdminService {
     return response$;
   }
 
+  /**
+  * @description this method convert from kelvin to Celcius
+  * @author Carlos Almanza
+  */
   convertKelvinToCelcius(value): number {
     let valueCelcius = parseInt((value - 273.15).toFixed(0));
     return valueCelcius;
   }
 
-
+  /**
+   * @description this method return object Incon's class
+   * @author Carlos Almanza
+   */
   validationIcon(headquartersPrincipal): any {
     switch (headquartersPrincipal.weather[0].icon) {
       case Weather.cloud:

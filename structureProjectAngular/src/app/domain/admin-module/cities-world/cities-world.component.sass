@@ -3,74 +3,15 @@
 .widget-city-name
     color: white
     font-size: 30px
-    left: 395px
-    bottom: -53px
+    position: relative
+    left: 124px
+    bottom: -27px
+    
+
 .widget-headquarter-name
     display: block
     margin: 0 auto
     width: fit-content
-
-.widget-temperature
-    display: block
-    margin: 0 auto
-    width: fit-content
-    font-size: 50px
-
-.widget-day
-    display: block
-    margin: 0 auto
-    width: fit-content
-    font-size: 21px
-
-.widget-icon
-    display: flex
-    flex-direction: column
-    flex: 1
-    //align-items: flex-end
-
-.widget-humidity
-    display: flex
-    flex: 1
-    color: white
-    margin-left: 139px
-
-#humidity-circle
-    border-radius: 50%
-    background-color: #D95ECB
-    border: transparent solid 2px
-    height: 10px
-    width: 10px
-
-#wind-circle
-    border-radius: 50%
-    background-color: #597AEF
-    border: transparent solid 2px
-    height: 10px
-    width: 10px
-
-.widget-wind
-    position: relative
-    display: flex
-    flex: 1
-    color: white
-    left: 78px
-    bottom: 24px
-    margin-left: 139px
-
-.moveCloud
-    color: rgb(175, 219, 233)
-    filter: drop-shadow( 1px 1px 5px rgb(188, 233, 247))
-    animation-iteration-count: infinite
-    animation-duration: 10s
-    animation-name: displacement
-    animation-timing-function: ease-in-out
-    animation-direction: alternate
-
-@keyframes displacement
-    from
-        margin-left: -15px
-    to
-        margin-left: 15px
 
 .widget-cities
     height: 250px
@@ -91,5 +32,17 @@
     color: $GENERALCOLOR
     font-family: $FONTFAMILY
 
-.btn
-    font-size: 51px
+.button
+    display: flex
+    flex: 1
+    flex-direction: column
+    align-items: flex-start
+    position: relative
+    bottom: 35px
+    background-color: darkviolet
+    width: max-content
+    padding: 9px
+    border-radius: 30%
+    left: 123px
+    font-size: 15px
+    top: 100px

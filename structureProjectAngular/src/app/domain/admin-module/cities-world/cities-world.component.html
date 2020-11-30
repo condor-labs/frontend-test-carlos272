@@ -1,7 +1,8 @@
 <div id="widget-cities">
     <div class="div_3">
         <div class="widget-card" *ngFor="let recommendedCitie of recommendedCities">
-            <div [ngStyle]="{'background-image': 'url(' + recommendedCitie.image + ')'}">
+            <div [ngStyle]="{'background-image': 'url(' + recommendedCitie.image + ')', 
+                'width': '300px', 'height':'300px', 'border-radius':'5%'}">
                 <div class="widget-city-name">{{recommendedCitie.name}}</div>
                 <a class="button" href="https://google.com">Visit Place</a>
             </div>
