@@ -26,9 +26,7 @@ export class CitiesWorldComponent implements OnInit {
   bestWeatherCity() {
     let recommendedCities = [];
     if (this.citiesWorldList) {
-      recommendedCities = this.citiesWorldList.filter(x => ((parseInt((x.main.temp - 273.15).toFixed(0))) >= 24) &&
-        ((parseInt((x.main.temp - 273.15).toFixed(0))) <= 30)
-      );
+      recommendedCities = this.adminService.calculationRank(this.citiesWorldList, 24, 30);
       return recommendedCities;
     }
   }

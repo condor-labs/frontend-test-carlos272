@@ -36,28 +36,23 @@ export class WeatherForecastSuggestComponent implements OnInit {
   }
   bestDay() {
     let bestDay = {};
-    if (this.sixWeathers) {
-      let bestWeather = this.sixWeathers.filter(x => ((parseInt((x.main.temp - 273.15).toFixed(0))) >= 25) &&
-        ((parseInt((x.main.temp - 273.15).toFixed(0))) <= 28)
-      );
-      if (bestWeather) {
-        let minWind = bestWeather[0].main.humidity;
-        bestWeather.forEach((l, index, element) => {
-          if (element[index]['main'].humidity < minWind) {
-            minWind = element[index]['main'].humidity;
-          }
-        });
-        if (minWind) {
-          bestDay = bestWeather.find(x => x.main.humidity == minWind);
+    let bestWeather = this.adminService.calculationRank(this.sixWeathers, 25, 28);
+    if (bestWeather) {
+      let minWind = bestWeather[0].main.humidity;
+      bestWeather.forEach((l, index, element) => {
+        if (element[index]['main'].humidity < minWind) {
+          minWind = element[index]['main'].humidity;
         }
+      });
+      if (minWind) {
+        bestDay = bestWeather.find(x => x.main.humidity == minWind);
       }
-      return bestDay;
     }
+    return bestDay;
   }
-
   validationDate(): void {
     if (this.sixWeathers) {
-      let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      let days = this.adminService.dayList();
       for (let i = 0; i < this.sixWeathers.length; i++) {
         let day = new Date(this.sixWeathers[i].date);
         let dayName = days[day.getDay()];
@@ -65,5 +60,4 @@ export class WeatherForecastSuggestComponent implements OnInit {
       }
     }
   }
-
 }

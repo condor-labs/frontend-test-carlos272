@@ -100,6 +100,25 @@ export class AdminService {
   }
 
   /**
+  * @description this method retuns name days
+  * @author Carlos Almanza
+  */
+  dayList(): string[] {
+    let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    return days;
+  }
+
+  /**
+   * @description this method retuns list wheather according to range
+   * @author Carlos Almanza
+   */
+  calculationRank(sixWeathers, rangeX, rangeY) {
+    let listWeather = sixWeathers.filter(x => ((parseInt((x.main.temp - 273.15).toFixed(0))) >= rangeX) &&
+      ((parseInt((x.main.temp - 273.15).toFixed(0))) <= rangeY)
+    );
+    return listWeather;
+  }
+  /**
    * @description this method return object Incon's class
    * @author Carlos Almanza
    */

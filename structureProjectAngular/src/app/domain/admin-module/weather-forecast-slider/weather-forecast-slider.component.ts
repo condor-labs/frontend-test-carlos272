@@ -43,7 +43,7 @@ export class WeatherForecastSliderComponent implements OnInit {
   }
   validationDate(): void {
     if (this.sixWeathers) {
-      let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      let days = this.adminService.dayList();
       for (let i = 0; i < this.sixWeathers.length; i++) {
         let day = new Date(this.sixWeathers[i].date);
         let dayName = days[day.getDay()];

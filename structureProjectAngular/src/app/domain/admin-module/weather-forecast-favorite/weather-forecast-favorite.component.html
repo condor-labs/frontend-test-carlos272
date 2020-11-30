@@ -1,10 +1,14 @@
+<p id="TitleText"><strong>OUR FAVORITE</strong> PLACES</p>
+
 <div id="widget-favorite">
     <div class="div_3">
         <div class="widget-card" *ngFor="let headquartersOther of headquartersOthers">
             <div class="widget-icon">
                 <i [ngClass]=" headquartersOther.iconFontawesome"></i>
             </div>
-            <div class="widget-headquarter-name">{{headquartersOther.name}}</div>
+            <div class="widget-headquarter-name">
+                <i class="fas fa-map-marker-alt"></i>
+                {{headquartersOther.name}}</div>
             <p> {{headquartersOther.description}}</p>
             <div class="widget-temperature">
                 <div id="temperature-circle">
