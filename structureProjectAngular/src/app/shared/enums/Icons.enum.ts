@@ -1,6 +1,6 @@
 export enum ClassIcon {
   cloudIcon = "fas fa-3x fa-cloud moveCloud",
-  snowIcon = "fas fa-3x fa-snowflake",
+  snowIcon = "fas fa-3x fa-cloud-showers-heavy",
   rainIcon = "fas fa-3x  fa-cloud-showers-heavy moveCloud",
   hazeIcon = "fas fa-3x  fa-smog",
   hotIcon = "fas fa-3x  fa-sun",
