@@ -1,6 +1,6 @@
-<div class="div_1" id="widget-favorite">
+<div id="widget-favorite">
     <div class="div_3">
-        <div class="div_2" *ngFor="let headquartersOther of headquartersOthers">
+        <div class="widget-card" *ngFor="let headquartersOther of headquartersOthers">
             <div class="widget-icon">
                 <i [ngClass]=" headquartersOther.iconFontawesome"></i>
             </div>
@@ -9,7 +9,8 @@
             <div class="widget-temperature">
                 <div id="temperature-circle">
                 </div>
-                {{headquartersOther.tempCelcius }}°C</div>
+                {{headquartersOther.tempCelcius }}°C
+            </div>
             <div class="widget-humidity">
                 <div id="humidity-circle">
                 </div>

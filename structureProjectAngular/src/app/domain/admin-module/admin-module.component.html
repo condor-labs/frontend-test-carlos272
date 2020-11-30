@@ -1,9 +1,11 @@
-<app-weather-forecast-principal *ngIf="validationDataArrive"></app-weather-forecast-principal>
-<hr>
-<app-weather-forecast-slider *ngIf="validationDataArrive"></app-weather-forecast-slider>
-<hr>
-<app-weather-forecast-favorite *ngIf="validationDataArrive"></app-weather-forecast-favorite>
-<hr>
-<app-weather-forecast-suggest *ngIf="validationDataArrive"></app-weather-forecast-suggest>
-<hr>
-<app-cities-world *ngIf="validationDataArrive"> </app-cities-world>
+<div *ngIf="validationDataArrive">
+    <app-weather-forecast-principal></app-weather-forecast-principal>
+    <hr>
+    <app-weather-forecast-slider></app-weather-forecast-slider>
+    <hr>
+    <app-weather-forecast-favorite></app-weather-forecast-favorite>
+    <hr>
+    <app-weather-forecast-suggest></app-weather-forecast-suggest>
+    <hr>
+    <app-cities-world> </app-cities-world>
+</div>
