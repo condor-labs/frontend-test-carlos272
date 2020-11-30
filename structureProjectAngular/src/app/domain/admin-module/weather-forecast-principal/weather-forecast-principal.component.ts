@@ -28,10 +28,6 @@ export class WeatherForecastPrincipalComponent implements OnInit {
     this.headquartersPrincipal = this.headquartersList.find(x => x.main_headquarter);
     this.adminService.validationIcon(this.headquartersPrincipal);
     this.headquartersPrincipal.main.temp = this.adminService.convertKelvinToCelcius(this.headquartersPrincipal.main.temp);
-    //console.log("headquartersPrincipal", this.headquartersPrincipal);
-    /*console.log("headquartersList", this.headquartersList);
-    console.log("extendedForecastList", this.extendedForecastList);
-    console.log("citiesWorldList", this.citiesWorldList);*/
   }
 
 }

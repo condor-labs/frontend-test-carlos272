@@ -3,8 +3,16 @@
         <i [ngClass]=" bestDayReturn.iconFontawesome"></i>
     </div>
     <div class="widget-temperature">{{bestDayReturn.main.temp}}°C</div>
-    <div class="widget-name">{{bestDayReturn.name}}</div>
+    <div class="widget-name">{{headquartersPrincipal.name}}</div>
     <div class="widget-day">{{bestDayReturn.day}}</div>
-    <div class="widget-humidity"> {{bestDayReturn.main.humidity}}%</div>
-    <div class="widget-wind"> {{bestDayReturn.wind.speed}}m/s</div>
+    <div class="widget-humidity">
+        <div id="humidity-circle">
+        </div>
+        {{bestDayReturn.main.humidity}}%
+    </div>
+    <div class="widget-wind">
+        <div id="wind-circle">
+        </div>
+        {{bestDayReturn.wind.speed}}m/s
+    </div>
 </div>

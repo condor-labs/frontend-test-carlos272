@@ -1,14 +1,11 @@
-<div class="div_1">
+<div class="div_1" id="widget-favorite">
     <div class="div_3">
         <div class="div_2" *ngFor="let recommendedCitie of recommendedCities">
-            <div class="widget-card" [ngStyle]="{'background-image': 'url(' + recommendedCitie.image + ')'}">
-                <div class="widget-carousel-item">
-                    <div id="widget-header">
-                        <div class="widget-city-name">{{recommendedCitie.name}}</div>
-                        <a class="button" href="https://google.com">Visit Place</a>
-                    </div>
-                </div>
+            <div [ngStyle]="{'background-image': 'url(' + recommendedCitie.image + ')'}">
+                <div class="widget-city-name">{{recommendedCitie.name}}</div>
+                <a class="button" href="https://google.com">Visit Place</a>
             </div>
+
         </div>
     </div>
 </div>

@@ -35,19 +35,9 @@ export class WeatherForecastSliderComponent implements OnInit {
   }
 
   initialData() {
-    this.totalPages = Math.round(this.sixWeathers.length/this.itemsPerSlide)
+    this.totalPages = Math.round(this.sixWeathers.length / this.itemsPerSlide)
     this.shownItems = this.sixWeathers.slice(this.pageIndex, this.itemsPerSlide);
   }
-  nextPage() {
-    this.pageIndex += this.itemsPerSlide;
-    this.shownItems = this.sixWeathers.slice(this.pageIndex, this.itemsPerSlide + this.pageIndex);
-  }
-
-  previusPage() {
-    this.pageIndex -= this.itemsPerSlide;
-    this.shownItems = this.sixWeathers.slice(this.pageIndex, this.pageIndex - this.itemsPerSlide);
-  }
-
   validationIconInternal() {
     this.sixWeathers = this.sixWeathers && this.sixWeathers.map(value => ({
       ...value,
@@ -66,5 +56,17 @@ export class WeatherForecastSliderComponent implements OnInit {
     }
 
   }
+  nextPage() {
+    if (this.pageIndex === 0) {
+      this.pageIndex += this.itemsPerSlide;
+      this.shownItems = this.sixWeathers.slice(this.pageIndex, this.itemsPerSlide + this.pageIndex);
+    }
+  }
 
+  previusPage() {
+    if (this.pageIndex != 0) {
+      this.pageIndex -= this.itemsPerSlide;
+      this.shownItems = this.sixWeathers.slice(this.pageIndex, this.pageIndex - this.itemsPerSlide);
+    }
+  }
 }

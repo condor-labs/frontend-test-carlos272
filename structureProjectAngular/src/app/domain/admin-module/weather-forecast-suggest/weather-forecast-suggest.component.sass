@@ -4,24 +4,35 @@
 #widget-suggest
     display: block
     border-radius: 10px
-    width: 200px
+    width: 400px
     height: 220px
     background: $LINEARGRADIENT
     color: $GENERALCOLOR
     font-family: $FONTFAMILY
 
-.widget-humidity, .widget-temperature, .widget-wind, .widget-day
+.widget-day
     display: block
     margin: 0 auto
     width: fit-content
+    position: relative
+    bottom: -21px
+    left: 136px
+    font-size: 22px
 
+.widget-temperature
+    display: block
+    margin: 0 auto
+    width: fit-content
+    position: relative
+    bottom: -52px
+    font-size: 47px
+    right: 140px
 
 .widget-icon
     display: flex
     flex-direction: column
     flex: 1
     align-items: flex-end
-
 
 .moveCloud
     color: rgb(175, 219, 233)
@@ -37,3 +48,46 @@
         margin-left: -15px
     to
         margin-left: 15px
+
+.widget-humidity
+    position: relative
+    display: block
+    margin: 0 auto
+    width: fit-content
+    right: 160px
+    bottom: 14px
+
+#humidity-circle
+    border-radius: 50%
+    background-color: #D95ECB
+    border: transparent solid 2px
+    height: 10px
+    width: 10px
+    position: relative
+    bottom: -20px
+    left: -18px
+
+#wind-circle
+    border-radius: 50%
+    background-color: #597AEF
+    border: transparent solid 2px
+    height: 10px
+    width: 10px
+    position: relative
+    bottom: -6px
+    right: 7px
+
+.widget-wind
+    position: relative
+    display: flex
+    flex: 1
+    color: white
+    left: -55px
+    bottom: 35px
+    margin-left: 139px
+
+.widget-name
+    position: relative
+    bottom: 56px
+    font-size: 31px
+    left: 13px
